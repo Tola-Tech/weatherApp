@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content= "width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="Description" content="A simple weather app for checking the current weather of any city in the world">
+        <meta name="theme-color" content="#9e6240"/>
+        <title>smash it weather app</title>
+        <link rel= "manifest" href = "./manifest.json"/>
+        <link rel= "stylesheet" href = "./style.css" media="all"/>
+        <!-- favicon -->
+        <link rel="icon" sizes="192x192" type="image/png" href="favicon/android-icon-192x192-dunplab-309.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180-dunplab-309.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152-dunplab-309.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144-dunplab-309.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120-dunplab-309.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114-dunplab-309.png">
+        <link rel="icon" sizes="96x96" type="image/png" href="favicon/favicon-96x96-dunplab-309.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76-dunplab-309.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72-dunplab-309.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60-dunplab-309.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57-dunplab-309.png">
+        <link rel="icon" sizes="32x32" type="image/png" href="favicon/favicon-32x32-dunplab-309.png">
+        <link rel="icon" sizes="16x16" type="image/png" href="favicon/favicon-16x16-dunplab-309.png">
+    </head>
+    <body>
+
+        <div class = "wrapper">
+            <header>
+                <i class = "fa fa-search"></i>
+                <label for = "#search-box">city:</label>
+                <input type = "text" autocomplete = "off" id = "search-box" placeholder = "Search for a city..." name = "search-box"/>
+            </header>
+
+            <main>
+                <div id = "location">
+                    <div id = "city"></div>
+                    <div id = "date"></div>
+                </div>
+                <section id = "weather-data">
+                    <div id = "icon-container">
+                        <img id = "weather-icon"
+                        src = "" alt = "icon describing the weather condition"
+                        />
+                    </div>
+                    <div id = "weather"></div>
+                    <p id = "weather-description"></p>
+                    <div id = "temp"></div>
+                </section> 
+            </main>
+        </div>
+        <i class = "fa fa-info-circle"></i>
+        <div class = "info">
+            <i class = "fa fa-arrow-down"></i>
+            <p>It is recomemded to make your search in "city name, country abbreviation" format. e.g New York, US</p>
+            <p>Using this format, you can always be sure to get unambiguous result for your city.</p>
+        </div>
+        
+        <script type="module" src="script.js"></script>
+        <script>
+            if("serviceWorker" in navigator) {
+                window.addEventListener("load", () => {
+                    navigator.serviceWorker.register("./sw.js")
+                    .then(reg => {
+                        console.log("service worker registered succesfully")
+                    }).catch(err => {
+                        console.log(`error registering service worker: ${err}`)
+                    })
+                })
+            }
+        </script>
+        <script src="https://kit.fontawesome.com/19ea530e34.js" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'montserrat', sans-serif;
+    background-image: url("bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    margin: 3em auto 1em;
+}
+
+header .fa {
+    position: absolute;
+    left: 2em;
+    bottom: .7em;
+    font-size: 1.4em;
+    opacity: .5;
+}
+
+header label {
+    display: none;
+}
+
+header input {
+    width: 100%;
+    padding: .5em .5em .5em 3.5em;
+    border: none;
+    outline: none;
+    background-color: rgba(225, 225, 225, 0.9);
+    border-radius: .8em;
+    box-shadow: 0 3px #9e6240;
+    color: #13262f;
+    font-size: 1.4em;
+    font-weight: 200;
+    transition: all 0.3s ease-in-out;
+    letter-spacing: .8px;
+}
+
+header input:focus {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 5px #9e6240;
+}
+
+main {
+    flex: 1 1 100%;
+    padding: 25px 25px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#location #city {
+    color: #fff;
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: .45px;
+}
+
+#location #city .fa {
+    color: #b22222;
+    font-size: 40px;
+    text-shadow: 1px 1px #fff, -1.5px -1px #fff;
+}
+
+#location #date {
+    color: #fff;
+    font-size: 16px;
+    background-color: #9e6240;
+    padding: .2em 1em;
+    border-radius: 4px;
+    font-style: italic;
+}
+
+#weather-data {
+    background-color: #fff;
+    margin-top: 5.5em;
+    padding: 3em 0em;
+    border-radius: 10px;
+    position: relative;
+    width: 80%;
+    height: 15em;
+}
+
+#weather-data #temp {
+    color: #6d6875;
+    font-size: 3em;
+    font-weight: 700;
+    margin: .2em auto .5em;
+    padding: 0;
+    margin-left: .2em;
+}
+
+#weather-data #temp span {
+    font-weight: 400;
+}
+
+#weather-data #weather {
+    color: #13262f;
+    opacity: .8;
+    font-size: 2em;
+    font-weight: 700;
+    margin-top: .7em;
+    text-shadow: 0 0 3px #9e6240;
+}
+
+#weather-data #weather-description {
+    font-weight: 100;
+    opacity: .8;
+}
+
+#weather-data #icon-container {
+    width: 7em;
+    height: 7em;
+    background-color: #9e6240;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    top: -3.5em;
+    left: calc(50% - 3.5em);
+    box-shadow: 0 0 1em #9e6240;
+}
+
+#weather-data #weather-icon {
+    display: none;
+}
+
+.info {
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+    right: 0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    height: 80%;
+    padding: 3em;
+    padding-top: 5em;
+    transition: all  ease-in-out .4s;
+    bottom: 0;
+    transform: translateY(100%);
+    overflow-y: scroll;
+}
+
+.open {
+    transform: translateY(0);
+}
+
+.close {
+    transform: translateY(100%)
+}
+
+.info p {
+    font-size: 1.1em;
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 2em;
+}
+
+.fa-info-circle {
+    display: inline-block;
+    position: absolute;
+    top: 1em;
+    right: 5%;
+    font-size: 1.2em;
+    cursor: pointer;
+    opacity: 1;
+    transition: all ease-in-out .5s;
+    color: #fff;
+}
+
+.fa-arrow-down {
+    display: inline-block;
+    position: absolute;
+    top: 1em;
+    right: 10%;
+    font-size: 1.8em;  
+    cursor: pointer;
+}
+
+/* for ipad size screens */
+@media only screen and (min-device-width: 768px ) and (max-device-width: 1223px) {
+    header {
+        width: 90%;
+        max-width: 600px;
+        margin: 2em auto 1em;
+    }
+    
+    header .fa {
+        position: absolute;
+        left: 3em;
+        bottom: .8em;
+        font-size: 1.5em;
+    }
+    
+    header input {
+        padding: .7em .7em .7em 4.2em;
+        font-size: 1.5em;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+
+    main {
+        padding: 50px 60px 0px;
+    }
+    
+    #location #city {
+        font-size: 3em;
+        font-weight: 800;
+        margin: 0;
+    }
+    
+    #location #city .fa {
+        color: #b22222;
+        font-size: 3rem;
+    }
+    
+    #location #date {
+        color: #fff;
+        font-weight: 600;
+        font-size: 16px;
+        background-color: #9e6240;
+        padding: .2em 1em;
+        border-radius: 4px;
+    }
+    
+    #weather-data {
+        margin-top: 6em;
+        width: 50%;
+        height: 15em;
+    }
+    
+    #weather-data #temp {
+        margin: .5em auto .2em;
+    }
+    
+    #weather-data #weather {
+        font-size: 3em;
+    }
+    
+    #weather-data #weather-icon {
+        width: 10em;
+        height: 10em;
+        display: none;
+    }
+
+    .info {
+        padding-top: 5em;
+        padding: 6em;
+        font-size: 1.5em;
+    }
+    
+    .fa-info-circle {
+        font-size: 1.8em;
+    }
+    
+    .fa-arrow-down {
+        font-size: 1.5em;  
+    }
+}
+
+/*desktops and laptops*/
+@media only screen and (min-width: 1224px ) {
+    header {
+        width: 60%;
+        max-width: 600px;
+        margin: 2em auto 1em;
+    }
+    
+    header .fa {
+        position: absolute;
+        left: 3em;
+        bottom: .8em;
+        font-size: 1.2em;
+        opacity: .5;
+    }
+    
+    header input {
+        width: 100%;
+        padding: .7em .7em .7em 4.2em;
+        font-size: 1.2em;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+    
+    #location #city {
+        font-size: 2.5em;
+        font-weight: 600;
+        margin-bottom: .2em;
+    }
+    
+    #location #city .fa {
+        font-size: 4rem;
+    }
+    
+    #location #date {
+        font-size: 1.2em;
+        padding: .4em 1em;
+        border-radius: 8px;
+    }
+
+    main {
+        padding-bottom: 0;
+    }
+    
+    #weather-data {
+        margin-top: 8em;
+        width: 30%;
+        height: 15em;
+    }
+    
+    #weather-data #temp {
+        font-size: 2em;
+        font-weight: 900;
+        margin: 1rem auto .5em;
+        margin-left: .4em;
+    }
+    
+    #weather-data #weather {
+        font-size: 2em;
+        font-weight: 900;
+        margin-top: 1em;
+    }
+    
+    #weather-data #weather-icon {
+        width: 10em;
+        height: 10em;
+        display: none;
+    }
+
+    .info {
+        padding: 10em;
+    }
+
+}
